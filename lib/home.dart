@@ -6,10 +6,8 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Container(
-          child: Text('Welcome'),
-        ),
+      body: const Center(
+        child: Text('Welcome'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -20,8 +18,8 @@ class Home extends StatelessWidget {
                     MaterialPageRoute(builder: (contex) => MyAppLogin()),
                   ));
         },
-        child: Icon(Icons.logout),
         tooltip: 'Logout',
+        child: const Icon(Icons.logout),
       ),
     );
   }
