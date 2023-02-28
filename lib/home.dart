@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sampleloginfire/authentication.dart';
+import 'package:sampleloginfire/main.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -11,12 +13,12 @@ class Home extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // AuthenticationHelper()
-          //     .signOut()
-          //     .then((_) => Navigator.pushReplacement(
-          //           context,
-          //           MaterialPageRoute(builder: (contex) => Login()),
-          //         ));
+          AuthenticationHelper()
+              .signOut()
+              .then((_) => Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (contex) => MyAppLogin()),
+                  ));
         },
         child: Icon(Icons.logout),
         tooltip: 'Logout',
