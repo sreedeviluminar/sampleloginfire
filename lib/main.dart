@@ -2,6 +2,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:sampleloginfire/signup.dart';
 
+import 'authentication.dart';
+import 'home.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -155,21 +158,21 @@ class _LoginFormState extends State<LoginForm> {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
 
-                  // AuthenticationHelper()
-                  //     .signIn(email: email!, password: password!)
-                  //     .then((result) {
-                  //   if (result == null) {
-                  //     Navigator.pushReplacement(context,
-                  //         MaterialPageRoute(builder: (context) => Home()));
-                  //   } else {
-                  //     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  //       content: Text(
-                  //         result,
-                  //         style: const TextStyle(fontSize: 16),
-                  //       ),
-                  //     ));
-                  //   }
-                  // });
+                  AuthenticationHelper()
+                      .signIn(email: email!, password: password!)
+                      .then((result) {
+                    if (result == null) {
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => Home()));
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: Text(
+                          result,
+                          style: const TextStyle(fontSize: 16),
+                        ),
+                      ));
+                    }
+                  });
                 }
               },
               style: ElevatedButton.styleFrom(

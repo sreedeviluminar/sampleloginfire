@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sampleloginfire/main.dart';
 
 import 'authentication.dart';
 import 'home.dart';
@@ -224,7 +225,7 @@ class _SignupFormState extends State<SignupForm> {
                       .then((result) {
                     if (result == null) {
                       Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => Home()));
+                          MaterialPageRoute(builder: (context) => MyAppLogin()));
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                         content: Text(
